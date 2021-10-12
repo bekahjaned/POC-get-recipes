@@ -1,9 +1,16 @@
 import React from 'react'
+import Checkbox from '@mui/material/Checkbox';
 
 function AllergyOption({ id, title, onChange, checked }) {
     return (
         <div>
-            <input type="checkbox" id={id} name={id} onChange={onChange} checked={checked} />
+            <Checkbox 
+               checked={checked}
+               onChange={onChange}
+               id={id}
+               name={id}
+               inputProps={{ 'aria-label': id }}
+            />
             <label>{title}</label>
         </div>
     )

@@ -13,6 +13,10 @@ function RecipeList({ recipeData }) {
                         key={recipe.id}
                         title={recipe.title}
                         image={recipe.image}
+                        diets={recipe.diets}
+                        time={recipe.readyInMinutes}
+                        servings={recipe.servings}
+                        summary={recipe.summary}
                         ingredients={recipe.extendedIngredients}
                         stepsList={recipe.analyzedInstructions}
                     />

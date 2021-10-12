@@ -1,9 +1,17 @@
 import React from 'react'
+import Radio from '@mui/material/Radio';
 
 function DietOption({ id, title, dietState, onChange }) {
     return (
         <div>
-            <input type="radio" id={id} name="diet" value={id} checked={dietState === id} onChange={onChange} />
+            <Radio 
+                checked={dietState === id}
+                onChange={onChange}
+                id={id}
+                name="diet"
+                value={id}
+                inputProps={{ 'aria-label': id }}
+            /> 
             <label>{title}</label>
         </div>
     )

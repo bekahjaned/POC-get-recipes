@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+// import Form from './Form'
 import DietOption from './DietOption';
 import AllergyOption from './AllergyOption';
 import Button from '@mui/material/Button';
@@ -6,13 +7,14 @@ import RecipeList from './RecipeList'
 import { dietOptions } from "./utils/dietOptions";
 import { allergyOptions } from "./utils/allergyOptions";
 
+
 import './App.css';
 
 
 const apiKey = `${process.env.REACT_APP_RECIPE_API_KEY}`
 
 function App() {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([])
   const [query, setQuery] = useState("")
   const [diet, setDiet] = useState("")
   const [allergies, setAllergies] = useState('')
@@ -59,8 +61,8 @@ function App() {
       .then((data) => {
         setRecipes(data.results);
       })
-      .catch(() => {
-        console.log("error")
+      .catch((error) => {
+        console.log(error)
       }) 
   }
 
@@ -88,6 +90,7 @@ function App() {
       /> 
       <Button variant="contained" onClick={getRecipes}>Get recipes</Button>
       <RecipeList recipeData={recipes}/>
+      {/* <Form /> */}
     </div>
   );
 }
